@@ -84,7 +84,6 @@ a:hover{
 }
 
 .presentation {
-
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -101,13 +100,13 @@ a:hover{
 	background: black;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	animation: drop 2s ease;
+
 }
 .intro-text p {
 	margin-top: 5px;
 	font-size: 22px;
 	color: #5a5a5a;
-	animation: drop 2s ease;
+
 }
 
 .text h1 {
@@ -116,13 +115,13 @@ a:hover{
 	background: rgba(254, 83, 65, 1);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	animation: drop 2s ease;
+
 }
 .text p {
 	margin-top: 5px;
 	font-size: 22px;
 	color: #5a5a5a;
-	animation: drop 2s ease;
+
 }
 b-text h1 {
 	font-size: 30px;
@@ -366,37 +365,98 @@ footer {
 	place-items: center;
 	
 }
+
 .signup {
 
 	display: grid;
 	padding: 0 5vw 0 5vw ;
-	height: 20vh;
+	height: 30vh;
 	place-items: center;
 	font-family: 'Varela', sans-serif;
 }
+.signup h2{
+	font-size: 40px;
+}
 .wrapper{
+	font-family: 'Varela', sans-serif;
 	height: 60px;
 	width: 400px;
 	display: flex;
 	text-align: center;
 	align-items: center;
 	justify-content: center;
-
-}
-.wrapper .btn-1{
+	position: relative;
+  }
+  .wrapper .btn-1{
 	position: absolute;
 	height: 100%;
 	width: 50%;
-	font-weight:500;
-	font-size: 20px;
-	line-height: 60 px;
+	color: rgba(255, 161, 14, 1);
+	background: #fff;
+	line-height: 60px;
+	font-size: 27px;
+	font-weight: 500;
 	border-radius: 5px;
+	user-select: none;
 	cursor: pointer;
-	display: none;
-}
-.wrapper .field{
+	box-shadow: 5px 5px 30px rgba(0,0,0,.2);
+	transition: 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+  }
+  .wrapper .btn-1:active{
+	transform: scale(0.9);
+  }
+  #click:checked ~ .btn-1{
+	height: 40px;
+	width: 100px;
+	opacity: 0;
+	pointer-events: none;
+  }
+  .wrapper .field{
+	height: 100%;
+	width: 0%;
+	opacity: 0;
+	pointer-events: none;
+	position: relative;
+	transition: 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+  }
+  #click:checked ~ .field{
+	width: 100%;
+	opacity: 1;
+	pointer-events: auto;
+  }
+  .wrapper .field input{
 	height: 100%;
 	width: 100%;
-	background-color: rgba(255, 161, 14, 1);
-	align-items: center;
-}
+	border: 2px solid #fff;
+	border-radius: 5px;
+	padding: 0 130px 0 15px;
+	font-size: 20px;
+	outline: none;
+	box-shadow: 5px 5px 30px rgba(0,0,0,.2);
+  }
+  .wrapper .field input::placeholder{
+	color: #999;
+	font-size: 18px;
+  }
+  .wrapper .field .btn-2{
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%);
+	font-size: 16px;
+	color: #fff;
+	line-height: 40px;
+	background: rgba(255, 161, 14, 1);
+	height: 40px;
+	width: 100px;
+	user-select: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+  }
+  .wrapper .field .btn-2:active{
+	transform: translateY(-50%) scale(0.9);
+  }
+  .wrapper #click{
+	display: none;
+  }
